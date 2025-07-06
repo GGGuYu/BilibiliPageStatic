@@ -1,0 +1,219 @@
+/* 导航总区域 */
+.bili-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
+/* 导航 上部 左侧入口 */
+.left-entry {
+    display:flex;
+}
+
+/* 
+flex是把a变成行内块 ,不然不能设置尺寸,那感觉操作li和a变flex是一样的 
+但li不能操作a中的文本,因此要操作a,因为我要设置文本
+*/
+/* .left-entry .entry-title {
+    display:flex;  
+    height: 64px;
+    align-items: center;
+    color:white;
+} */
+
+/* 操作文本 */
+.left-entry li a {
+    color:white;
+    align-items: center;
+}
+/* 操作块 li中有a和svg 所以还是要用flex把他们垂直对齐*/
+.left-entry li {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    color: white;
+    margin-right: 15px; 
+}
+
+.left-entry svg {
+    margin-right: 6px;
+}
+
+/* 中间的搜索区域 */
+.center-search-container {
+    /* flex单人一个1,就是空剩下多少就填满,因为两边我们可以设置固定的 */
+    flex: 1;
+    height: 40px;
+    padding: 0 4px 0 4px;
+    border-radius: 8px;
+    border: 1px solid #e3e5e7;
+    background-color: #f1f2f3;
+    /* 经典配合,内部元素横向并且垂直对齐 */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* 总盒子,相当于是个背景板,把真正的输入和按钮包在里面 */
+.center-search-container:hover {
+    background-color: #fff;
+}
+
+/* 输入框的外层保护,里面有输入框,所以可以用flex 
+是为了让内部的真正的输入框,可以直接选择塞满我这个外部限制,
+然后从外部限制来真正的限制输入框的大小,为了利用flex让输入put自适应 */
+.center-search-container .nav-search-content {
+    display: flex;
+    height: 20px;
+    width: 100%;
+    /* 左右输入不至于顶到外层的边边上 */
+    padding: 0 8px;
+}
+
+/* 真正的输入框 */
+.nav-search-content .nav-search-input {
+    flex: 1; /* 自适应 */
+    background-color: transparent; /* 透明融入背景板 */
+    line-height: 20px; /* 限制行高 */
+    overflow: hidden; /* 如果超出了,隐藏,比如输入太多 */
+    padding-right: 8px; /* 给按钮腾出来一点位置 */
+}
+
+.center-search-container .nav-search-button {
+    /* 相对于外部容器的绝对 , 为了定位,感觉不需要,可以自适应 */
+    /* position: absolute; */
+    /* top: 4px;
+    right: 7px; */
+    display: flex; /* 我发现大部分都可以用flex来自适应 */
+    align-items: center; /* 经典组合 */
+    justify-content: center; /* 水平也居中 */
+    line-height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color .3s;
+}
+
+.center-search-container .nav-search-button:hover {
+    background-color: #e3e4e5;
+}
+
+/* 右侧入口区域 */
+.right-entry {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.right-entry .header-avatar {
+    height: 50px;
+    width: 50px;
+    /* 避免贴边 */
+    padding-right: 10px;
+    position: relative;
+}
+
+.right-entry .header-avatar a {
+    /* 经典相对绝对配合,从而限制在容器中的绝对定位 */
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    /* 行高和高度相同可以居中,因为正好顶着 */
+    line-height: 36px;
+    border-radius: 50%;
+    background-color: #00aeec;
+    /* 让内部的span水平居中 */
+    display: flex;
+    justify-content: center;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* 外面盒子控制间距 */
+.right-entry .right-entry-item {
+    min-width: 50px;
+    margin-right: 4px;
+}
+
+/* 内部a下两个要flex自适应为竖着对齐 */
+.right-entry .right-entry-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.right-entry-item a span {
+    font-size: 13px;
+}
+
+/*  */
+.right-entry .upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #fb7299;
+    margin-left: 10px;
+}
+.right-entry .upload span {
+    margin-left: 5px;
+}
+
+/* Banner区域 */
+
+/* 首先是要压住nav ,图层要在上面 */
+.bili-nav {
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+/* banner图片很宽,可能溢出,所以要隐藏 */
+/* 不管怎么缩放,应该图片中间要显示出来! */
+.bili-banner {
+    position: relative;
+    height: 155px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bili-banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bili-banner .logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* logo贴底下 */
+    align-items: flex-end;
+}
+
+.bili-banner .logo a {
+    position: relative; 
+    width: 162px;
+    height: 78px;
+    margin-bottom: 10px;
+}
+
+.bili-banner .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: linear-gradient(rgba(0,0,0,.4) , transparent);
+}

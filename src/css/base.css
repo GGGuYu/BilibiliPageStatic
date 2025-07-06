@@ -1,0 +1,30 @@
+/* 每个页面都需要 ,  作为公共样式*/
+
+/* 清除网页默认家的margin和padding */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 清楚列表那个小点 */
+ul, ol, li {
+    list-style: none;
+}
+
+/* a标签应该取消掉下划线 */
+a {
+   text-decoration: none;
+   color: #000; 
+   cursor: pointer;
+}
+
+/* 输入框的聚焦黑框和边框 */
+input {
+    border: 0 none;
+    outline-style: none;
+}
+
+body {
+    background-color: blue;
+    font-size: 14px;
+}
