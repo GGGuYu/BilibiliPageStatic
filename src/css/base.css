@@ -1,9 +1,11 @@
 /* 每个页面都需要 ,  作为公共样式*/
 
 /* 清除网页默认家的margin和padding */
+/* 清楚自动加粗 */
 *{
     margin: 0;
     padding: 0;
+    font-weight: normal;
 }
 
 /* 清楚列表那个小点 */
@@ -26,4 +28,9 @@ input {
 
 body {
     font-size: 14px;
+}
+
+/* 处理图片默认缝隙 */
+img {
+    vertical-align: middle;
 }

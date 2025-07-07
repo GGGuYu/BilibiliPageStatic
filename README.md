@@ -19,3 +19,20 @@
     grid-auto-flow: column; 一列一列填充, 默认是一行一行填充
     不然默认的话,123,456,这样分的
 15. SVG也可以填充颜色 , fill
+16. 可以给图片加遮罩层
+background-image: linear-gradient(180deg ,rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 100%); 渐变遮罩层,颜色 透明度 位置
+17. 截断文本为... :
+```css
+    /* 超出显示区域要隐藏并且2行文本后显示 '...' */
+    overflow: hidden;
+    /* 截断设置 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-break: anywhere;
+    -webkit-line-clamp: 2;
+```
+18. 网格可以分配一部分给一个元素使用
+    grid-row: 1/3; #从第1行开始，到第3行前结束
+    grid-column: 1/3;
+19. 宽度100%和padding结合就需要
+20. inline-flex是把自己这个容器也变成一个行内块,子元素也是,flex是自己是正常块,子元素变行内块
