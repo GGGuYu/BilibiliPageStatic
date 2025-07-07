@@ -36,3 +36,4 @@ background-image: linear-gradient(180deg ,rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 100%)
     grid-column: 1/3;
 19. 宽度100%和padding结合就需要
 20. inline-flex是把自己这个容器也变成一个行内块,子元素也是,flex是自己是正常块,子元素变行内块
+21. position: fixed; 不动如山
