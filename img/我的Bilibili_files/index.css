@@ -279,68 +279,15 @@ flex是把a变成行内块 ,不然不能设置尺寸,那感觉操作li和a变fle
 }
 
 /* 频道右侧网格 */
-.bili-channel .right-channel-container {
+.bili-channel right-channel-container {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
 /* 网格的左侧一堆按钮 grid的使用*/
-.bili-channel .channel-items_left {
+.bili-channel channel-items_left {
     display: grid;
     grid-template-columns: repeat(11,1fr);
     gap: 10px;
-    width: 100%;
 }
-
-.bili-channel .channel-items_left a {
-    /* 经典高和文高一样,可以卡在中间 */
-    height: 26px; /* 这里我有一点疑惑,a没有变成行内块,高度能否生效? 应该可以,因为它直属父元素grid */
-    line-height: 26px;
-    background-color: #f6f7f8;
-    border: 1px solid #f1f2f3;
-    border-radius: 6px;
-    /* 好像是文本水平居中来着 */
-    text-align: center;
-    color: #61666d;
-}
-
-/* 最右边的一堆网格 */
-.bili-channel .channel-items_right {
-    width: 240px;
-    display: grid;
-    grid-template-rows: repeat(2 ,1fr);
-    /* 这个只是填充方式,相当于135一起,246一起 */
-    grid-auto-flow: column;
-    row-gap: 10px;
-    /* 禁止被挤压 */
-    flex-shrink: 0;
-    margin-left: 30px;
-    border-left: 1px solid #e3e5e7;
-}
-
-/* 里面有一个svg和一个span,让他们往右边靠 */
-.channel-items_right a {
-    width: 100%;
-    height: 28px;
-    /* 文字间隙 */
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-    /* 往右边靠 */
-    justify-content: flex-end;
-}
-
-.channel-items_right a svg {
-    width: 20px;
-    height: 20px;
-    /* 与文字有间距 */
-    margin-right: 4px;
-    fill: #61666d;
-}
-
-.channel-items_right span {
-    color: #61666d
-}
-
-
